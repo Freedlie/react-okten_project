@@ -1,10 +1,11 @@
 import React from 'react';
-import {Genre} from "./components/genre";
+import {Body, Header} from "./components";
 
 const App = () => {
     return (
         <div>
-            <Genre/>
+            <Header/>
+            <Body/>
         </div>
     );
 };

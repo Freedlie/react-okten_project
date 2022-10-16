@@ -1,0 +1,21 @@
+.switcher{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prev{
+    margin: 0px 75px 0px 0px;
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.next{
+    margin: 0px 0px 0px 75px;
+    height: 50px;
+    width: 100px;
+    border-radius: 25px;
+    border: 2px solid black;
+}
