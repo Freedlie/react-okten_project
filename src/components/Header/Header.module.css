@@ -3,7 +3,7 @@
     height: 100px;
     position: fixed;
     width: 100%;
-    background: #021b4d;
+    background: #053e4d;
     align-items: center;
     justify-content: space-around;
     z-index: 10;
@@ -12,39 +12,6 @@
 .logo_size{
     height: 75px;
     width: 75px;
-}
-
-.buttonSearch{
-    height: 30px;
-    width: 30px;
-}
-
-.input{
-    height: 40px;
-    width: 350px;
-    font-size: 18px;
-    text-align: center;
-    margin: 0px 5px 0px 0px;
-    border-radius: 25px;
-    border: 2px solid black;
-    transition: 0.8s;
-}
-
-.input:hover{
-    background: bisque;
-    transition: 0.8s;
-}
-
-.form{
-    display: flex;
-    align-items: center;
-}
-
-.formButton{
-    height: 35px;
-    width: 35px;
-    border-radius: 10px;
-    border: 2px solid black;
 }
 
 .showGenres{
@@ -60,3 +27,4 @@
     background: bisque;
     transition: 0.8s;
 }
+

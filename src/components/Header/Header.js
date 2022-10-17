@@ -1,26 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import css from './Header.module.css';
-import {buttonSearch, logoURL} from "../../configs";
+import {logoURL} from "../../configs";
+import {MovieSearch} from "../MovieSearch/MovieSearch";
+import {Genres} from "../Genres/Genres";
 
 const Header = () => {
+
+    const [state, setState] = useState(false)
+
     return (
-        <div className={css.header_block}>
-            <div>
-                <img className={css.logo_size} src={logoURL} alt="logo"/>
-            </div>
+        <div>
+            <div className={css.header_block}>
+                <div>
+                    <img className={css.logo_size} src={logoURL} alt="logo"/>
+                </div>
 
-            <div className={css.form}>
-                <input className={css.input} type="text" placeholder='enter film'/>
-                <button className={css.formButton}>
-                    <img className={css.buttonSearch} src={buttonSearch} alt="search"/>
-                </button>
-            </div>
+                <div>
+                    <MovieSearch/>
+                </div>
 
-            <div>
-                <button className={css.showGenres}>show genres</button>
+                <div>
+                    <button className={css.showGenres} onClick={ ()=> {
+                        setState(true);
+                    }}>show genres</button>
+                </div>
             </div>
+            {
+                state &&
+                <div>
+                    <Genres setState={setState}/>
+                </div>
+            }
         </div>
+
     );
 };
 

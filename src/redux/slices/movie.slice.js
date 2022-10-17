@@ -1,10 +1,13 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {moviePagesService} from "../../services/movie.pages.service";
+import {allMoviesService, GenreService, moviePagesService, searchMovieService} from "../../services";
 
 const initialState ={
     movies:[],
     currentMovie: null,
-    pagesCounter: 1
+    pagesCounter: 1,
+    searchMovies:[],
+    genres:[],
+    allMovies: []
 }
 
 const getAll = createAsyncThunk(
@@ -16,7 +19,42 @@ const getAll = createAsyncThunk(
         }catch (e){
             return rejectWithValue(e.response.data);
         }
-    })
+    });
+
+const getAllMovies = createAsyncThunk(
+    'movieSlice/getAllMovies',
+    async(_,{rejectWithValue})=>{
+        try{
+            const {data} = await allMoviesService.getAll();
+            return data.results;
+        }catch (e){
+            return rejectWithValue(e.response.data);
+        }
+    });
+
+const getGenres = createAsyncThunk(
+    'movieSlice/GetGenres',
+    async(_,{rejectWithValue})=>{
+        try{
+            const {data} = await GenreService.getAll();
+            return data.genres;
+        }catch (e){
+            return rejectWithValue(e.response.data)
+        }
+    }
+)
+
+const search = createAsyncThunk(
+    'movieSlice/search',
+    async(word,{rejectWithValue})=>{
+        try{
+            const {data} = await searchMovieService.getAll(word);
+            return data.results;
+        }catch (e){
+            return rejectWithValue(e.response.data);
+        }
+    }
+)
 
 const movieSlice = createSlice({
     name: 'movieSlice',
@@ -40,12 +78,24 @@ const movieSlice = createSlice({
             .addCase(getAll.fulfilled,(state,action)=>{
                 state.movies = action.payload
             })
+            .addCase(search.fulfilled,(state,action)=>{
+                state.searchMovies = action.payload
+            })
+            .addCase(getGenres.fulfilled,(state,action)=>{
+                state.genres = action.payload
+            })
+            .addCase(getAllMovies.fulfilled,(state,action)=>{
+                state.allMovies = action.payload
+            })
 })
 
 const {reducer: movieReducer, actions:{setCurrentMovie,incrementPagesCounter,decrementPagesCounter}} = movieSlice;
 
 const movieActions={
     getAll,
+    search,
+    getGenres,
+    getAllMovies,
     setCurrentMovie,
     incrementPagesCounter,
     decrementPagesCounter

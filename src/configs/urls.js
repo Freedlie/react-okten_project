@@ -1,6 +1,7 @@
 const baseURL = 'https://api.themoviedb.org/3';
 
 const urls={
+    allMovies : '/discover/movie',
     pagesOfMovies : '/discover/movie?page=',
     genre : '/genre/movie/list',
     searchMovie: '/search/keyword?query='
@@ -26,4 +27,3 @@ export {
 
 
 
-// movie ?page=6

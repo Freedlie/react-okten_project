@@ -4,3 +4,6 @@ export * from './Movies/Movies';
 export * from './MovieCard/MovieCard';
 export * from './Star/Star';
 export * from './PageSwitcher/PageSwitcher';
+export * from './MovieSearch/MovieSearch';
+export * from './Genres/Genres';
+export * from './Genre/Genre';
