@@ -4,8 +4,9 @@ import css from './Header.module.css';
 import {logoURL} from "../../configs";
 import {MovieSearch} from "../MovieSearch/MovieSearch";
 import {Genres} from "../Genres/Genres";
+import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = ({searchFilm}) => {
 
     const [state, setState] = useState(false)
 
@@ -17,13 +18,14 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <MovieSearch/>
+                    <MovieSearch searchFilm={searchFilm}/>
                 </div>
 
                 <div>
                     <button className={css.showGenres} onClick={ ()=> {
                         setState(true);
-                    }}>show genres</button>
+                    }}>Show genres</button>
+                    <NavLink className={css.homePage} to={'/'}>Home page</NavLink>
                 </div>
             </div>
             {

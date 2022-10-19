@@ -1,0 +1,33 @@
+.padding{
+    padding: 110px 0px 0px 0px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20%;
+}
+
+.title{
+    font-size: 20px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    font-weight: bold;
+}
+
+.poster{
+    padding: 0px 10px 0px 0px;
+}
+
+.info{
+    width: 100%;
+    border: 2px solid red;
+}
+
+.p{
+    color: #999999;
+}
+
+.span{
+    color: #161616;
+}

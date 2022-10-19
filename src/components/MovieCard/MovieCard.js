@@ -3,13 +3,15 @@ import React from 'react';
 import css from './MovieCard.module.css';
 import {postURL} from "../../configs";
 import {Star} from "../Star/Star";
+import {NavLink} from "react-router-dom";
 
 const MovieCard = ({movie}) => {
 
     const vote = (movie.vote_average)/2;
 
     return (
-        <div className={css.card}>
+        <NavLink to={`/movieDetails/${movie.id}`} className={css.card}>
+
             <div>
                 <img className={css.poster} src={postURL + movie.backdrop_path} alt="poster"/>
             </div>
@@ -22,7 +24,7 @@ const MovieCard = ({movie}) => {
             <div>
                 <Star vote={vote}/>
             </div>
-        </div>
+        </NavLink>
     );
 };
 

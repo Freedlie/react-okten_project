@@ -1,12 +1,19 @@
 import React from 'react';
-import {Body, Header} from "./components";
+import {Route, Routes} from "react-router-dom";
+
+import {MainPage} from "./layouts";
+import {GenrePage, MovieDetailsPage, MoviesPage, SearchMoviePage} from "./pages";
 
 const App = () => {
     return (
-        <div>
-            <Header/>
-            <Body/>
-        </div>
+            <Routes>
+                <Route path={'/'} element={<MainPage/>}>
+                    <Route path={'/'} element = {<MoviesPage/>}/>
+                    <Route path={'genres/:id'} element = {<GenrePage/>}/>
+                    <Route path={'movieDetails/:id'} element={<MovieDetailsPage/>}/>
+                </Route>
+
+            </Routes>
     );
 };
 

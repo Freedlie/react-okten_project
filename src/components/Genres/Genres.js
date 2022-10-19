@@ -13,7 +13,6 @@ const Genres = ({setState}) => {
     useEffect(()=>{
         dispatch(movieActions.getGenres())
     },[]);
-
     return (
         <div>
             <div className={css.genres}>

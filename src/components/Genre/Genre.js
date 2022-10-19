@@ -3,6 +3,7 @@ import React from 'react';
 import css from './Genre.module.css';
 import {useDispatch, useSelector} from "react-redux";
 import {movieActions} from "../../redux";
+import {NavLink} from "react-router-dom";
 
 const Genre = ({genre}) => {
 
@@ -10,12 +11,12 @@ const Genre = ({genre}) => {
 
     const dispatch = useDispatch();
 
+
+
     return (
         <div>
-            {/*<p className={css.genre} onClick={async()=>{*/}
-            {/*    const {payload} = await dispatch(movieActions.getAllMovies());*/}
-            {/*    payload.map((obj,index)=>)*/}
-            {/*}}>{genre.name}</p>*/}
+            {/*<p >{genre.name}</p>*/}
+            <NavLink className={css.genre} to={`/genres/${genre.id}`}>{genre.name}</NavLink>
         </div>
     );
 };

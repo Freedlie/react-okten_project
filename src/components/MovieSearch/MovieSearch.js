@@ -1,25 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import css from "./MovieSearch.module.css";
 import {buttonSearch} from "../../configs";
-import {useDispatch} from "react-redux";
 
-const MovieSearch = () => {
+const MovieSearch = ({searchFilm}) => {
+    const [searchTerm, setSearchTerm] = useState('')
 
-const dispatch = useDispatch();
-
-    // const submit = () => {
-    //     return undefined;
-    // }
 
     return (
         <div className={css.form}>
-            {/*<form onSubmit={submit({})}>*/}
-                <input className={css.input} type="text" placeholder='enter film'/>
-                <button className={css.formButton}>
-                    <img className={css.buttonSearch} src={buttonSearch} alt="search"/>
-                </button>
-            {/*</form>*/}
-
+                <input className={css.input} value={searchTerm} type="text" placeholder='enter film' onChange={(e)=> setSearchTerm(e.target.value)}/>
+                <p className={css.formButton}>
+                    <img className={css.buttonSearch} src={buttonSearch} alt="search" onClick={()=>{
+                        searchFilm(searchTerm);
+                    }}/>
+                </p>
         </div>
     );
 };

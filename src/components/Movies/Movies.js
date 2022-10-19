@@ -6,17 +6,14 @@ import {movieActions} from "../../redux";
 import {MovieCard} from "../MovieCard/MovieCard";
 
 const Movies = () => {
-    const dispatch = useDispatch();
-    const {movies,pagesCounter} =useSelector(state => state.movieReducer);
+    const {movies,searchMovies} =useSelector(state => state.movieReducer)
 
-    useEffect(()=>{
-        dispatch(movieActions.getAll(pagesCounter));
-    },[pagesCounter])
 
     return (
         <div className={css.wrap}>
             {
-                movies.map((movie,index)=>(<MovieCard key={index} movie={movie}/>))
+                searchMovies.length > 0 ? searchMovies.map((movie,index)=>(<MovieCard key={index} movie={movie}/>)) :
+                  movies.map((movie,index)=>(<MovieCard key={index} movie={movie}/>))
             }
         </div>
     );
