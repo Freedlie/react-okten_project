@@ -7,7 +7,7 @@ const MoviesPage = () => {
 
     const {pagesCounter} =useSelector(state => state.movieReducer);
 
-    const [moviesName,setMoviesName] = useState('')
+    const [moviesName,setMoviesName] = useState('');
 
     const dispatch = useDispatch();
 

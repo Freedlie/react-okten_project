@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 
 import {MainPage} from "./layouts";
-import {GenrePage, MovieDetailsPage, MoviesPage, SearchMoviePage} from "./pages";
+import {GenrePage, MovieDetailsPage, MoviesPage} from "./pages";
 
 const App = () => {
     return (

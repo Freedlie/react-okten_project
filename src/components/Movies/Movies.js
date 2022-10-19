@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
+import {useSelector} from "react-redux";
 
 import css from './Movies.module.css';
-import {movieActions} from "../../redux";
 import {MovieCard} from "../MovieCard/MovieCard";
 
 const Movies = () => {
