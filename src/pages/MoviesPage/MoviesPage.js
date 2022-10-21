@@ -34,7 +34,7 @@ const MoviesPage = () => {
 
     return (
         <div>
-            <Header searchFilm={searchFilm}/>
+            <Header searchFilm={searchFilm} formParams={true}/>
             <Movies/>
             <PageSwitcher/>
         </div>

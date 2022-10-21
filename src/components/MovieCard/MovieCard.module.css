@@ -10,10 +10,12 @@
     flex-direction: column;
     color: grey;
     text-align: center;
-    background: #f7f7f7;
+    background: var(--background-movie-card);
+    transition: background 500ms linear;
 }
 
 .title{
-    color: black;
+    color: var(--background-movie-card-title);
+    transition: background 500ms linear;
 }
 

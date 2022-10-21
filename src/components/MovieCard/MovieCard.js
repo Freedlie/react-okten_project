@@ -9,6 +9,9 @@ const MovieCard = ({movie}) => {
 
     const vote = (movie.vote_average)/2;
 
+
+
+
     return (
         <NavLink to={`/movieDetails/${movie.id}`} className={css.card}>
 

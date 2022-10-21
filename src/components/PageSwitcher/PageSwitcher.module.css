@@ -19,3 +19,8 @@
     border-radius: 25px;
     border: 2px solid black;
 }
+
+.counter{
+    color: var(--background-movie-card-title);
+    transition: background 500ms linear;
+}

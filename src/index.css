@@ -36,3 +36,41 @@ img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
+
+
+/*тема*/
+html[data-theme='dark'] {
+    --background-app-color: #101010;
+    --background-movie-card: #333333;
+    --background-movie-card-title: white;
+    --background-header: #053e4d;
+    --background-movie-details-text: white;
+}
+
+html[data-theme='light'] {
+    --background-app-color: #fcfcee;
+    --background-movie-card: #eeeeee;
+    --background-movie-card-title: black;
+    --background-header: #4361b9;
+    --background-movie-details-text: #161616;
+}
+/*--------------------*/
+
+/* hide/show form*/
+html[display-form='hideform'] {
+    --display-Form: none;
+    --display-Button: block;
+}
+
+html[display-form='showform'] {
+    --display-Form: flex;
+    --display-Button: none;
+}
+/*--------------------*/
+
+
+
+body{
+    background: var(--background-app-color);
+    transition: background 1000ms linear;
+}

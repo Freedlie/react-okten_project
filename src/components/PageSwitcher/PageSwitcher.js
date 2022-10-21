@@ -17,7 +17,7 @@ const PageSwitcher = () => {
                 <button className={css.prev} onClick={()=>{
                     dispatch(movieActions.decrementPagesCounter(1))
                 }}>{arrowPrev}</button>
-            <div>
+            <div className={css.counter}>
                 {pagesCounter}
             </div>
                 <button className={css.next} onClick={()=>{

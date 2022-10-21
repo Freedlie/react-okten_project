@@ -4,7 +4,7 @@ import {Header, MovieDetails} from "../../components";
 const MovieDetailsPage = () => {
     return (
         <div>
-            <Header/>
+            <Header formParams={false}/>
             <MovieDetails/>
         </div>
     );

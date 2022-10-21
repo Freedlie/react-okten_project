@@ -5,10 +5,22 @@ import {logoURL} from "../../configs";
 import {MovieSearch} from "../MovieSearch/MovieSearch";
 import {Genres} from "../Genres/Genres";
 import {NavLink} from "react-router-dom";
+import {useTheme} from "../../hooks";
 
-const Header = ({searchFilm}) => {
+const Header = ({searchFilm,formParams}) => {
 
-    const [state, setState] = useState(false)
+    let booleanForm = formParams;
+
+    const [state, setState] = useState(false);
+
+    const {setTheme} = useTheme();
+
+    const handleLightThemeClick = () => {
+        setTheme('light')
+    }
+    const handleDarkThemeClick = () => {
+        setTheme('dark')
+    }
 
     return (
         <div>
@@ -18,14 +30,19 @@ const Header = ({searchFilm}) => {
                 </div>
 
                 <div>
-                    <MovieSearch searchFilm={searchFilm}/>
+                    <MovieSearch searchFilm={searchFilm} booleanForm={booleanForm}/>
                 </div>
 
                 <div>
                     <button className={css.showGenres} onClick={ ()=> {
                         setState(true);
                     }}>Show genres</button>
-                    <NavLink className={css.homePage} to={'/'}>Home page</NavLink>
+                    <button className={css.buttonTheme} onClick={handleLightThemeClick}>
+                        Light
+                    </button>
+                    <button className={css.darkButtonTheme} onClick={handleDarkThemeClick}>
+                        Dark
+                    </button>
                 </div>
             </div>
             {

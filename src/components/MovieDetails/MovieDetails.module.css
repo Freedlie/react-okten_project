@@ -14,6 +14,8 @@
     width: 100%;
     border-bottom: 1px solid grey;
     font-weight: bold;
+    color: var(--background-movie-details-text);
+    transition: background 500ms linear;
 }
 
 .poster{
@@ -31,7 +33,8 @@
 }
 
 .span{
-    color: #161616;
+    color: var(--background-movie-details-text);
+    transition: background 500ms linear;
 }
 
 .secondBlock{
@@ -48,7 +51,7 @@
     margin: 30px 0px 0px 0px;
     font-size: 16px;
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid grey;
 }
 
 .videoBlock{

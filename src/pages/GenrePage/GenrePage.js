@@ -6,7 +6,7 @@ import {MoviesByGenre} from "../../components/MoviesByGenre/MoviesByGenre";
 const GenrePage = () => {
     return (
         <div>
-            <Header/>
+            <Header formParams={false}/>
             <MoviesByGenre/>
         </div>
     );

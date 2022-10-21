@@ -6,12 +6,14 @@ import css from './MovieDetails.module.css';
 import {movieActions} from "../../redux";
 import {postURL} from "../../configs";
 import {movieDetailsService} from "../../services";
+import {useHideForm} from "../../hooks";
 
 const MovieDetails = () => {
 
     const [currentMovieTrailers, setCurrentMovieTrailers] = useState(null)
 
     const {id} = useParams();
+
 
     const dispatch = useDispatch();
     const {movieDetails} = useSelector(state => state.movieReducer);
