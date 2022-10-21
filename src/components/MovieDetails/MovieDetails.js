@@ -6,14 +6,12 @@ import css from './MovieDetails.module.css';
 import {movieActions} from "../../redux";
 import {postURL} from "../../configs";
 import {movieDetailsService} from "../../services";
-import {useHideForm} from "../../hooks";
 
 const MovieDetails = () => {
 
     const [currentMovieTrailers, setCurrentMovieTrailers] = useState(null)
 
     const {id} = useParams();
-
 
     const dispatch = useDispatch();
     const {movieDetails} = useSelector(state => state.movieReducer);
@@ -71,8 +69,6 @@ const MovieDetails = () => {
                         {
                             movieDetails.vote_count && <p className={css.p}>Vote count: <span className={css.span}>{movieDetails.vote_count}</span> </p>
                         }
-
-
                     </div>
                 </div>
                 <div className={css.secondBlock}>

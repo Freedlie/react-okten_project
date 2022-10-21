@@ -1,16 +1,13 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 import css from './MovieCard.module.css';
 import {postURL} from "../../configs";
 import {Star} from "../Star/Star";
-import {NavLink} from "react-router-dom";
 
 const MovieCard = ({movie}) => {
 
     const vote = (movie.vote_average)/2;
-
-
-
 
     return (
         <NavLink to={`/movieDetails/${movie.id}`} className={css.card}>

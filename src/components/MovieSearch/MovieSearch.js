@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
+import {NavLink} from "react-router-dom";
 
 import css from "./MovieSearch.module.css";
 import {buttonSearch} from "../../configs";
-import {NavLink} from "react-router-dom";
 
 const MovieSearch = ({searchFilm,booleanForm}) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -24,10 +24,7 @@ const MovieSearch = ({searchFilm,booleanForm}) => {
                 <NavLink className={css.homePage} to={'/'} >Home page</NavLink>
                 </div>
             }
-
-
         </div>
-
     );
 };
 

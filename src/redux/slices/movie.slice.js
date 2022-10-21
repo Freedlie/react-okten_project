@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {
-    allMoviesService,
+    // allMoviesService,
     GenreService,
     movieDetailsService,
     moviePagesService,
@@ -9,12 +10,12 @@ import {
 
 const initialState ={
     movies:[],
-    currentMovie: null,
+    // currentMovie: null,
     pagesCounter: 1,
     searchMovies:[],
     genres:[],
     moviesByGenre: [],
-    allMovies:[],
+    // allMovies:[],
     movieDetails:[]
 }
 
@@ -41,17 +42,17 @@ const getDetailsAboutMovie = createAsyncThunk(
     }
 )
 
-const getAllMovies = createAsyncThunk(
-    'movieSlice/getAllMovies',
-    async(_,{rejectWithValue})=>{
-        try {
-            const {data} = await allMoviesService.getAll();
-            return data;
-        }catch (e){
-            return rejectWithValue(e.response.data);
-        }
-    }
-)
+// const getAllMovies = createAsyncThunk(
+//     'movieSlice/getAllMovies',
+//     async(_,{rejectWithValue})=>{
+//         try {
+//             const {data} = await allMoviesService.getAll();
+//             return data;
+//         }catch (e){
+//             return rejectWithValue(e.response.data);
+//         }
+//     }
+// )
 
 const getMoviesByGenre = createAsyncThunk(
     'movieSlice/getMoviesByGenre',
@@ -92,9 +93,9 @@ const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
-        setCurrentMovie: (state, action) => {
-            state.currentMovie = action.payload
-        },
+        // setCurrentMovie: (state, action) => {
+        //     state.currentMovie = action.payload
+        // },
         incrementPagesCounter: (state, action) => {
             state.pagesCounter += action.payload
         },
@@ -125,9 +126,9 @@ const movieSlice = createSlice({
             .addCase(getMoviesByGenre.fulfilled,(state,action)=>{
                 state.moviesByGenre = action.payload
             })
-            .addCase(getAllMovies.fulfilled,(state, action)=>{
-                state.allMovies = action.payload
-            })
+            // .addCase(getAllMovies.fulfilled,(state, action)=>{
+            //     state.allMovies = action.payload
+            // })
             .addCase(getDetailsAboutMovie.fulfilled,(state,action)=>{
                 state.movieDetails = action.payload
             })
@@ -140,7 +141,7 @@ const movieActions={
     search,
     getGenres,
     getMoviesByGenre,
-    getAllMovies,
+    // getAllMovies,
     getDetailsAboutMovie,
     setCurrentMovie,
     incrementPagesCounter,

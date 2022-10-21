@@ -7,7 +7,6 @@ import {MovieCard} from "../MovieCard/MovieCard";
 const Movies = () => {
     const {movies,searchMovies} =useSelector(state => state.movieReducer)
 
-
     return (
         <div className={css.wrap}>
             {

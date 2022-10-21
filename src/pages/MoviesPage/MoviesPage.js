@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Header, Movies, PageSwitcher} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
+
+import {Header, Movies, PageSwitcher} from "../../components";
 import {movieActions} from "../../redux";
 
 const MoviesPage = () => {

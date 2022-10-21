@@ -19,9 +19,8 @@ const MoviesByGenre = () => {
     return (
         <div className={css.wrap}>
             {
-                moviesByGenre.map((movie,index)=>(<MovieCard movie={movie}/>))
+                moviesByGenre.map((movie,index)=>(<MovieCard key={index} movie={movie}/>))
             }
-
         </div>
     );
 };

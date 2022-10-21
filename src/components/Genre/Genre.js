@@ -5,7 +5,6 @@ import {NavLink} from "react-router-dom";
 
 const Genre = ({genre}) => {
 
-
     return (
         <div>
             <NavLink className={css.genre} to={`/genres/${genre.id}`} >{genre.name}</NavLink>

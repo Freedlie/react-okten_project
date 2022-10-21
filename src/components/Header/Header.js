@@ -4,7 +4,6 @@ import css from './Header.module.css';
 import {logoURL} from "../../configs";
 import {MovieSearch} from "../MovieSearch/MovieSearch";
 import {Genres} from "../Genres/Genres";
-import {NavLink} from "react-router-dom";
 import {useTheme} from "../../hooks";
 
 const Header = ({searchFilm,formParams}) => {
